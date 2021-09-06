@@ -1,10 +1,10 @@
 import 'package:admin/constants.dart';
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/home/main/components/social.dart';
+import 'package:admin/screens/home/main/components/header_action.dart';
+import 'package:admin/screens/home/main/components/home_banner_fitur.dart';
 import 'package:admin/screens/home/main/components/web_menu.dart';
 import 'package:admin/screens/home/providers/home_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class HomeMainHeader extends StatelessWidget {
@@ -34,57 +34,21 @@ class HomeMainHeader extends StatelessWidget {
                             providerHome.openOrCloseDrawer();
                           },
                         ),
-                      SvgPicture.asset("assets/home/icons/logo.svg"),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                            "assets/home/icons/logo_prime_dental.png",
+                            width: 135),
+                      ),
                       Spacer(),
                       if (Responsive.isDesktop(context)) WebMenu(),
                       Spacer(),
                       // Socal
-                      Social(),
+                      HeaderAction(),
                     ],
                   ),
                   SizedBox(height: kHomeDefaultPadding * 2),
-                  Text(
-                    "Welcome to Our Blog",
-                    style: TextStyle(
-                      fontSize: 32,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: kHomeDefaultPadding),
-                    child: Text(
-                      "Stay updated with the newest design and development stories, case studies, \nand insights shared by DesignDK Team.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Raleway',
-                        height: 1.5,
-                      ),
-                    ),
-                  ),
-                  FittedBox(
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Text(
-                            "Learn More",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(width: kHomeDefaultPadding / 2),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  HomeBannerFitur(),
                   if (Responsive.isDesktop(context))
                     SizedBox(height: kHomeDefaultPadding),
                 ],

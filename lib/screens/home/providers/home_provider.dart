@@ -7,8 +7,7 @@ class HomeProvider extends ChangeNotifier {
   int _selectedIndex = 0;
   int get selectedIndex => _selectedIndex;
 
-  List<String> get menuItems =>
-      ["Cases", "Services", "About Us", "Careers", "Blog", "Contact"];
+  List<String> get menuItems => ["Home", "Profil", "Layanan", "Info Kesehatan"];
 
   void setMenuIndex(int index) {
     _selectedIndex = index;
