@@ -11,7 +11,7 @@ class Excellence extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: kHomeDefaultPadding),
       child: Responsive.isDesktop(context)
           ? Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ItemExcellence(
                     title: "Experienced Doctors",
@@ -111,7 +111,7 @@ class MobileItemExcellence extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.all(kHomeDefaultPadding),
-        margin: EdgeInsets.only(right: kHomeDefaultPadding),
+        margin: EdgeInsets.only(bottom: kHomeDefaultPadding),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: kHomeDarkBlackColor,

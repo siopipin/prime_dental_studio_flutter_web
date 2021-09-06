@@ -1,9 +1,6 @@
-import 'package:admin/models/Blog.dart';
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/home/components/blog_post.dart';
-import 'package:admin/screens/home/components/categories.dart';
 import 'package:admin/screens/home/components/excellence.dart';
-import 'package:admin/screens/home/components/search.dart';
+import 'package:admin/screens/home/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -23,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Excellence(),
         if (!Responsive.isMobile(context)) SizedBox(width: kHomeDefaultPadding),
+        SearchBar()
         // Sidebar
       ],
     );
