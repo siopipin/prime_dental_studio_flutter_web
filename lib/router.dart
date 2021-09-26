@@ -1,5 +1,6 @@
 import 'package:admin/screens/home/main/home_main_screen.dart';
 import 'package:admin/screens/home/screens/auth/login_screen.dart';
+import 'package:admin/screens/home/screens/auth/register_screen.dart';
 import 'package:admin/screens/home/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,10 @@ class RouteConfiguration {
     Path(
       r'^' + LoginScreen.route,
       (context, match) => LoginScreen(),
+    ),
+    Path(
+      r'^' + RegisterScreen.route,
+      (context, match) => RegisterScreen(),
     ),
   ];
 

@@ -1,5 +1,6 @@
 import 'package:admin/constants.dart';
 import 'package:admin/screens/home/main/components/logo.dart';
+import 'package:admin/screens/home/screens/auth/register_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -110,18 +111,21 @@ class _LoginScreenState extends State<LoginScreen> {
               Text('Lupa kata sandi?',
                   style: TextStyle(color: Colors.grey, fontSize: 11)),
               SizedBox(height: 10),
-              Row(
-                children: [
-                  Text('Belum punya akun?',
-                      style: TextStyle(color: Colors.grey, fontSize: 11)),
-                  SizedBox(width: 5),
-                  Text('Daftar Sekarang.',
-                      style: TextStyle(
-                          color: cMain,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 11))
-                ],
-              ),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, RegisterScreen.route),
+                child: Row(
+                  children: [
+                    Text('Belum punya akun?',
+                        style: TextStyle(color: Colors.grey, fontSize: 11)),
+                    SizedBox(width: 5),
+                    Text('Daftar Sekarang.',
+                        style: TextStyle(
+                            color: cMain,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 11))
+                  ],
+                ),
+              )
             ],
           )
         ],
