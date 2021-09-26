@@ -165,21 +165,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, LoginScreen.route),
-                child: Row(
-                  children: [
-                    Text('Sudah punya akun?',
-                        style: TextStyle(color: Colors.grey, fontSize: 11)),
-                    SizedBox(width: 5),
-                    Text('Login Sekarang.',
-                        style: TextStyle(
-                            color: cMain,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11))
-                  ],
-                ),
-              )
+              Row(
+                children: [
+                  Text('Sudah punya akun?',
+                      style: TextStyle(color: Colors.grey, fontSize: 11)),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, LoginScreen.route),
+                    style: TextButton.styleFrom(
+                      backgroundColor: cPurpleWhite,
+                    ),
+                    child: Text("Login Sekarang.",
+                        style: TextStyle(color: Colors.black.withOpacity(1))),
+                  ),
+                ],
+              ),
             ],
           )
         ],

@@ -111,20 +111,21 @@ class _LoginScreenState extends State<LoginScreen> {
               Text('Lupa kata sandi?',
                   style: TextStyle(color: Colors.grey, fontSize: 11)),
               SizedBox(height: 10),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, RegisterScreen.route),
-                child: Row(
-                  children: [
-                    Text('Belum punya akun?',
-                        style: TextStyle(color: Colors.grey, fontSize: 11)),
-                    SizedBox(width: 5),
-                    Text('Daftar Sekarang.',
-                        style: TextStyle(
-                            color: cMain,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11))
-                  ],
-                ),
+              Row(
+                children: [
+                  Text('Belum punya akun?',
+                      style: TextStyle(color: Colors.grey, fontSize: 11)),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () =>
+                        Navigator.pushNamed(context, RegisterScreen.route),
+                    style: TextButton.styleFrom(
+                      backgroundColor: cPurpleWhite,
+                    ),
+                    child: Text("Daftar Sekarang.",
+                        style: TextStyle(color: Colors.black.withOpacity(1))),
+                  ),
+                ],
               )
             ],
           )
