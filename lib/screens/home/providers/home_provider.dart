@@ -21,4 +21,21 @@ class HomeProvider extends ChangeNotifier {
       _scaffoldKey.currentState.openDrawer();
     }
   }
+
+  //DateTimePicker
+  DateTime selectedDate = DateTime.now();
+
+  Future<void> selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate) setSelectedDate = picked;
+  }
+
+  set setSelectedDate(val) {
+    selectedDate = val;
+    notifyListeners();
+  }
 }

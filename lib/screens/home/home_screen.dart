@@ -1,5 +1,7 @@
 import 'package:admin/responsive.dart';
+import 'package:admin/screens/home/components/book_online.dart';
 import 'package:admin/screens/home/components/excellence.dart';
+import 'package:admin/screens/home/components/item_services.dart';
 import 'package:admin/screens/home/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,19 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Excellence(),
         if (!Responsive.isMobile(context)) SizedBox(width: kHomeDefaultPadding),
-        SearchBar()
+        SearchBar(),
+        SizedBox(height: kHomeDefaultPadding),
+        Row(
+          children: [
+            ///Book Online
+            BookOnline(),
+
+            SizedBox(width: kHomeDefaultPadding),
+
+            ///Item Service
+            ItemServices()
+          ],
+        )
         // Sidebar
       ],
     );

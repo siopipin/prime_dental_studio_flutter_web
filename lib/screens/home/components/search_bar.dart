@@ -91,7 +91,10 @@ class _SearchBarState extends State<SearchBar> {
     return Expanded(
         child: Container(
             padding: EdgeInsets.only(left: 10, right: 10),
-            color: Colors.white,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
             margin: EdgeInsets.only(right: kHomeDefaultPadding),
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -134,7 +137,10 @@ class _SearchBarState extends State<SearchBar> {
     return Expanded(
         child: Container(
             padding: EdgeInsets.only(left: 10, right: 10),
-            color: Colors.white,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
             margin: EdgeInsets.only(right: kHomeDefaultPadding),
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
