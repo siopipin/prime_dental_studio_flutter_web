@@ -88,8 +88,8 @@ class ItemExcellence extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title,
-                      style: TextStyle(
-                          color: kMainColor, fontWeight: FontWeight.bold)),
+                      style:
+                          TextStyle(color: cMain, fontWeight: FontWeight.bold)),
                   Text(desc, style: TextStyle(color: Colors.white60))
                 ],
               ))

@@ -173,7 +173,7 @@ class _BookOnlineState extends State<BookOnline> {
         child: ElevatedButton(
           onPressed: () {},
           style: TextButton.styleFrom(
-            backgroundColor: kMainColor,
+            backgroundColor: cMain,
             padding: EdgeInsets.symmetric(
                 horizontal: kHomeDefaultPadding * 1.5,
                 vertical: kHomeDefaultPadding),

@@ -2,6 +2,7 @@ import 'package:admin/constants.dart';
 import 'package:admin/responsive.dart';
 import 'package:admin/screens/home/main/components/header_action.dart';
 import 'package:admin/screens/home/main/components/home_banner_fitur.dart';
+import 'package:admin/screens/home/main/components/logo.dart';
 import 'package:admin/screens/home/main/components/web_menu.dart';
 import 'package:admin/screens/home/providers/home_provider.dart';
 import 'package:flutter/material.dart';
@@ -34,12 +35,7 @@ class HomeMainHeader extends StatelessWidget {
                             providerHome.openOrCloseDrawer();
                           },
                         ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Image.asset(
-                            "assets/home/icons/logo_prime_dental.png",
-                            width: 135),
-                      ),
+                      Logo(),
                       Spacer(),
                       if (Responsive.isDesktop(context)) WebMenu(),
                       Spacer(),

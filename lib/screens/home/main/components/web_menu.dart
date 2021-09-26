@@ -42,9 +42,9 @@ class _WebMenuItemState extends State<WebMenuItem> {
 
   Color _borderColor() {
     if (widget.isActive) {
-      return kMainColor;
+      return cMain;
     } else if (!widget.isActive & _isHover) {
-      return kMainColor.withOpacity(0.4);
+      return cMain.withOpacity(0.4);
     }
     return Colors.transparent;
   }

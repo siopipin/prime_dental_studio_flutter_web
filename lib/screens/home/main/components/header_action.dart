@@ -1,5 +1,6 @@
 import 'package:admin/constants.dart';
 import 'package:admin/responsive.dart';
+import 'package:admin/screens/home/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class HeaderAction extends StatelessWidget {
@@ -25,7 +26,7 @@ class HeaderAction extends StatelessWidget {
         ElevatedButton(
           onPressed: () {},
           style: TextButton.styleFrom(
-            backgroundColor: kMainColor,
+            backgroundColor: cMain,
             padding: EdgeInsets.symmetric(
               horizontal: kHomeDefaultPadding * 1.5,
               vertical:
@@ -36,7 +37,9 @@ class HeaderAction extends StatelessWidget {
         ),
         SizedBox(width: kHomeDefaultPadding),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(LoginScreen.route);
+          },
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(
               horizontal: kHomeDefaultPadding * 1.5,
