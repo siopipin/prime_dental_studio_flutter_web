@@ -3,6 +3,7 @@ import 'package:admin/providers/MenuProvider.dart';
 import 'package:admin/router.dart';
 import 'package:admin/screens/home/main/home_main_screen.dart';
 import 'package:admin/screens/home/providers/home_provider.dart';
+import 'package:admin/screens/home/screens/konsultasi/providers/konsultasi_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => MenuProvider()),
           ChangeNotifierProvider(create: (context) => HomeProvider()),
+          ChangeNotifierProvider(create: (context) => KonsultasiProvider()),
         ],
         // child: MainScreen(),
         child: MaterialApp(

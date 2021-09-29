@@ -1,12 +1,17 @@
 import 'package:admin/constants.dart';
 import 'package:flutter/material.dart';
 
-class Fitur extends StatelessWidget {
+class Fitur extends StatefulWidget {
   final String path;
   final String name;
   const Fitur({Key key, @required this.path, @required this.name})
       : super(key: key);
 
+  @override
+  _FiturState createState() => _FiturState();
+}
+
+class _FiturState extends State<Fitur> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,11 +25,11 @@ class Fitur extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            path,
+            widget.path,
             width: 40,
           ),
           Text(
-            name,
+            widget.name,
             style: TextStyle(fontSize: 12),
             textAlign: TextAlign.center,
           )

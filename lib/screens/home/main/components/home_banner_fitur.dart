@@ -1,8 +1,11 @@
 import 'package:admin/constants.dart';
 import 'package:admin/responsive.dart';
 import 'package:admin/screens/home/main/components/fitur.dart';
+import 'package:admin/screens/home/screens/konsultasi/konsultasi_screen.dart';
+import 'package:admin/screens/home/screens/konsultasi/providers/konsultasi_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeBannerFitur extends StatefulWidget {
   HomeBannerFitur({Key key}) : super(key: key);
@@ -13,7 +16,13 @@ class HomeBannerFitur extends StatefulWidget {
 
 class _HomeBannerFiturState extends State<HomeBannerFitur> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final provKonsultasi = Provider.of<KonsultasiProvider>(context);
     return Container(
       child: Row(
         children: [
@@ -50,9 +59,43 @@ class _HomeBannerFiturState extends State<HomeBannerFitur> {
                         Fitur(
                             path: 'assets/home/icons/service.png',
                             name: "Layanan\nKesehatan"),
-                        Fitur(
-                            path: 'assets/home/icons/chat.png',
-                            name: "Konsultasi\nKesehatan"),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () {
+                                provKonsultasi.setFiturEnable(true);
+                                Navigator.pushNamed(
+                                  context,
+                                  KonsultasiScreen.route,
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                    right: kHomeDefaultPadding / 2),
+                                decoration: BoxDecoration(
+                                    color: provKonsultasi.fiturEnable
+                                        ? Colors.green[100]
+                                        : Colors.white38,
+                                    borderRadius: BorderRadius.circular(14)),
+                                width: 100,
+                                height: 120,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/home/icons/chat.png',
+                                      width: 40,
+                                    ),
+                                    Text(
+                                      "Konsultasi\nKesehatan",
+                                      style: TextStyle(fontSize: 12),
+                                      textAlign: TextAlign.center,
+                                    )
+                                  ],
+                                ),
+                              )),
+                        ),
                         Fitur(
                             path: 'assets/home/icons/jadwal.png',
                             name: "Buat\nPerjanjian"),

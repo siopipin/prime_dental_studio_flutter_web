@@ -1,6 +1,7 @@
 import 'package:admin/screens/home/main/home_main_screen.dart';
 import 'package:admin/screens/home/screens/auth/login_screen.dart';
 import 'package:admin/screens/home/screens/auth/register_screen.dart';
+import 'package:admin/screens/home/screens/konsultasi/konsultasi_screen.dart';
 import 'package:admin/screens/home/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +40,10 @@ class RouteConfiguration {
     Path(
       r'^' + RegisterScreen.route,
       (context, match) => RegisterScreen(),
+    ),
+    Path(
+      r'^' + KonsultasiScreen.route,
+      (context, match) => KonsultasiScreen(),
     ),
   ];
 
