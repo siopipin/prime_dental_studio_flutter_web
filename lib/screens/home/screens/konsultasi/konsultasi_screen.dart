@@ -3,8 +3,9 @@ import 'package:admin/screens/home/main/components/footer.dart';
 import 'package:admin/screens/home/main/components/home_main_header.dart';
 import 'package:admin/screens/home/main/components/home_main_side_menu.dart';
 import 'package:admin/screens/home/providers/home_provider.dart';
+import 'package:admin/screens/home/screens/konsultasi/widgets/info_konsultasi.dart';
+import 'package:admin/screens/home/screens/konsultasi/widgets/menu_konsultasi.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class KonsultasiScreen extends StatefulWidget {
   static const String route = '/konsultasi';
@@ -28,7 +29,15 @@ class _KonsultasiScreenState extends State<KonsultasiScreen> {
                 padding: EdgeInsets.all(kHomeDefaultPadding),
                 constraints: BoxConstraints(maxWidth: kHomeMaxWidth),
                 child: SafeArea(
-                  child: Text('data'),
+                  child: Row(
+                    children: [
+                      //Info kiri
+                      InfoKonsultasi(),
+
+                      //Konsultasi kanan
+                      MenuKonsultasi()
+                    ],
+                  ),
                 )),
 
             //Footer
