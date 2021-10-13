@@ -1,6 +1,9 @@
 import 'package:admin/screens/home/main/home_main_screen.dart';
 import 'package:admin/screens/home/screens/auth/login_screen.dart';
 import 'package:admin/screens/home/screens/auth/register_screen.dart';
+import 'package:admin/screens/home/screens/info_kesahatan/info_kesehatan.dart';
+import 'package:admin/screens/home/screens/info_kesahatan/widgets/detail_artikel.dart';
+import 'package:admin/screens/home/screens/keranjang/keranjang.dart';
 import 'package:admin/screens/home/screens/konsultasi/konsultasi_screen.dart';
 import 'package:admin/screens/home/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +22,11 @@ class RouteConfiguration {
   /// will be returned. This means that the paths higher up in the list will
   /// take priority.
   static List<Path> paths = [
-    // Path(
-    //   r'^' + ArticlePage.baseRoute + r'/([\w-]+)$',
-    //   (context, match) => Article.getArticlePage(match),
-    // ),
     Path(
-      r'^' + ProfileScreen.route,
-      (context, match) => ProfileScreen(),
+      r'^' + DetailArtikel.baseRoute + r'/([\w-]+)$',
+      (context, match) => Article.getArticlePage(match),
     ),
+
     Path(
       r'^' + HomeMainScreen.route,
       (context, match) => HomeMainScreen(),
@@ -44,6 +44,22 @@ class RouteConfiguration {
     Path(
       r'^' + KonsultasiScreen.route,
       (context, match) => KonsultasiScreen(),
+    ),
+    Path(
+      r'^' + ProfileScreen.route,
+      (context, match) => ProfileScreen(),
+    ),
+
+    //keranjang
+    Path(
+      r'^' + KeranjangScreen.route,
+      (context, match) => KeranjangScreen(),
+    ),
+
+    //blog
+    Path(
+      r'^' + InfoKesehatan.route,
+      (context, match) => InfoKesehatan(),
     ),
   ];
 

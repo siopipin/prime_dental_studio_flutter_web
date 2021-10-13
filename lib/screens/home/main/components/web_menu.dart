@@ -1,5 +1,7 @@
 import 'package:admin/constants.dart';
+import 'package:admin/screens/home/main/home_main_screen.dart';
 import 'package:admin/screens/home/providers/home_provider.dart';
+import 'package:admin/screens/home/screens/info_kesahatan/info_kesehatan.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +16,16 @@ class WebMenu extends StatelessWidget {
         (index) => WebMenuItem(
           text: providerHome.menuItems[index],
           isActive: index == providerHome.selectedIndex,
-          press: () => providerHome.setMenuIndex(index),
+          press: () {
+            providerHome.setMenuIndex(index);
+            if (index == 3) {
+              Navigator.pushNamed(context, InfoKesehatan.route);
+            } else if (index == 0) {
+              Navigator.pushNamed(context, HomeMainScreen.route);
+            } else {
+              print('null');
+            }
+          },
         ),
       ),
     );
